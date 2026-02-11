@@ -4,17 +4,12 @@ import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
-import { Hotel, Mail, Lock, User, Phone } from 'lucide-react';
+import { Mail, Lock, User, Phone } from 'lucide-react';
 import { toast } from 'sonner';
 import { useTheme } from '../../contexts/ThemeContext';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-
-const backgroundImages = [
-  'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80',
-  'https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?auto=format&fit=crop&w=1920&q=80',
-  'https://images.unsplash.com/photo-1571770095004-6b61b1cf3088?auto=format&fit=crop&w=1920&q=80',
-  'https://images.unsplash.com/photo-1540541338205-68783143717d?auto=format&fit=crop&w=1920&q=80'
-];
+import logo from '../../images/logo.svg';
+import signinpagebackgroundimage from '../../images/signinpagebackgroundimage.png';
 
 export function LoginPage() {
   const navigate = useNavigate();
@@ -25,14 +20,6 @@ export function LoginPage() {
   const [signupEmail, setSignupEmail] = useState('');
   const [signupPhone, setSignupPhone] = useState('');
   const [signupPassword, setSignupPassword] = useState('');
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,28 +49,19 @@ export function LoginPage() {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center p-4 overflow-hidden">
-      {/* Background Slideshow */}
-      {backgroundImages.map((image, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-            }`}
-        >
-          <ImageWithFallback
-            src={image}
-            alt={`Background ${index + 1}`}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
-        </div>
-      ))}
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <ImageWithFallback
+          src={signinpagebackgroundimage}
+          alt="Login Background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
+      </div>
 
       <div className="relative z-10 w-full max-w-md">
-        {/* Logo */}
         <Link to="/" className="flex items-center justify-center gap-2 mb-8 group">
-          <div className="bg-white/90 p-2 rounded-lg shadow-lg group-hover:scale-105 transition-transform">
-            <Hotel className="h-8 w-8 text-blue-600" />
-          </div>
+          <img src={logo} alt="StayOnVacation" className="h-16 w-16 drop-shadow-lg group-hover:scale-105 transition-transform" />
           <div className="flex items-center gap-1">
             <span className="text-3xl font-extrabold tracking-tight text-blue-400 drop-shadow-md">Stay</span>
             <span className="text-3xl font-semibold text-white drop-shadow-md">On</span>
