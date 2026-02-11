@@ -291,7 +291,6 @@ export const properties: Property[] = [
     guestRating: 4.9,
     reviewCount: 521,
     images: [
-      'https://images.unsplash.com/photo-1540541338205-68783143717d?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1561501900-3701fa6a0864?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80'

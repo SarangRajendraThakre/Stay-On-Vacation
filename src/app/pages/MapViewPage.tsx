@@ -35,7 +35,6 @@ export function MapViewPage() {
         </div>
       </div>
 
-      <Footer />
     </div>
   );
 }

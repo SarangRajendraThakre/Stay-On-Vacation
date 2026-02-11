@@ -12,7 +12,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Sheet, SheetContent, SheetTrigger } from '../components/ui/sheet';
 import { Filter, Map, List } from 'lucide-react';
 
+import { MapPreviewCard } from '../components/MapPreviewCard';
+
 export function SearchResultsPage() {
+  // ... existing code ...
+
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const destination = searchParams.get('destination') || '';
@@ -220,7 +224,7 @@ export function SearchResultsPage() {
       <Header />
 
       {/* Search Summary Bar */}
-      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-16 z-40">
+      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-4 py-2 md:py-4">
           <SearchBar onSearch={handleSearch} />
         </div>
@@ -230,8 +234,11 @@ export function SearchResultsPage() {
         <div className="flex gap-6">
           {/* Desktop Filter Panel */}
           <aside className="hidden lg:block w-80 flex-shrink-0">
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 sticky top-36 max-h-[calc(100vh-10rem)] overflow-y-auto">
-              <FilterPanel />
+            <div className="sticky top-36 max-h-[calc(100vh-10rem)] overflow-y-auto space-y-4">
+              <MapPreviewCard />
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-6">
+                <FilterPanel />
+              </div>
             </div>
           </aside>
 

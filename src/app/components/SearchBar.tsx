@@ -65,9 +65,7 @@ export function SearchBar({ onSearch, className = '' }: SearchBarProps) {
   const handleSuggestionClick = (suggestion: { label: string; type: 'city' | 'property' | 'type'; id?: string }) => {
     setDestination(suggestion.label);
     setShowSuggestions(false);
-    if (onSearch) {
-      onSearch({ destination: suggestion.label, checkIn, checkOut, adults, children, rooms });
-    }
+    setIsDatesOpen(true);
   };
 
   const handleSearch = () => {
@@ -152,7 +150,9 @@ export function SearchBar({ onSearch, className = '' }: SearchBarProps) {
                   <CalendarComponent
                     mode="single"
                     selected={checkIn}
-                    onSelect={setCheckIn}
+                    onSelect={(date) => {
+                      setCheckIn(date);
+                    }}
                     disabled={(date) => date < new Date()}
                   />
                 </div>
@@ -161,7 +161,13 @@ export function SearchBar({ onSearch, className = '' }: SearchBarProps) {
                   <CalendarComponent
                     mode="single"
                     selected={checkOut}
-                    onSelect={setCheckOut}
+                    onSelect={(date) => {
+                      setCheckOut(date);
+                      if (date) {
+                        setIsDatesOpen(false);
+                        setIsGuestsOpen(true);
+                      }
+                    }}
                     disabled={(date) => date < (checkIn || new Date())}
                   />
                 </div>

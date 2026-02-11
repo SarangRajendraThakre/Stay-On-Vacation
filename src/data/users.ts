@@ -27,7 +27,7 @@ export interface SavedCard {
 
 export const currentUser: User = {
   id: 'u001',
-  name: 'John Doe',
+  name: 'Sarang Thakre',
   email: 'john.doe@example.com',
   phone: '+91 98765 43210',
   country: 'India',
@@ -46,7 +46,7 @@ export const currentUser: User = {
       last4Digits: '4242',
       expiryMonth: '12',
       expiryYear: '2028',
-      cardholderName: 'John Doe',
+      cardholderName: 'Sarang Thakre',
     },
     {
       id: 'c002',
@@ -54,7 +54,7 @@ export const currentUser: User = {
       last4Digits: '5555',
       expiryMonth: '06',
       expiryYear: '2027',
-      cardholderName: 'John Doe',
+      cardholderName: 'Sarang Thakre',
     },
   ],
 };
