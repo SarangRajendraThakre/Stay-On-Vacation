@@ -106,9 +106,10 @@ export const properties: Property[] = [
     guestRating: 4.6,
     reviewCount: 189,
     images: [
+      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80',
+
       'https://imgs.search.brave.com/JvGToU2aCUsGuXSXJp0hW50ztYAZxrSHbiVyB5fA7KA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zZWFz/aWRlZmwuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDI0LzAx/L1NlYXNpZGUyOS00/LTkxNHg1NjAuanBn',
       'https://images.unsplash.com/photo-1572331165267-854da2b00dc1?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'
     ],
     description: 'Beachfront luxury villa with private pool, perfect for families and groups seeking privacy and comfort.',

@@ -139,14 +139,14 @@ export function SearchBar({ onSearch, className = '' }: SearchBarProps) {
               </button>
             </PopoverTrigger>
             <PopoverContent
-              className="w-auto p-0"
-              align="start"
+              className="w-full sm:w-auto p-0 max-h-[80vh] overflow-y-auto sm:max-h-none sm:overflow-visible"
+              align="center"
               onMouseEnter={() => setIsDatesOpen(true)}
               onMouseLeave={() => setIsDatesOpen(false)}
             >
-              <div className="flex gap-4 p-4">
-                <div>
-                  <p className="text-sm font-medium mb-2">Check-in</p>
+              <div className="flex flex-col sm:flex-row gap-4 p-4">
+                <div className="flex-1">
+                  <p className="text-sm font-medium mb-2 text-center sm:text-left">Check-in</p>
                   <CalendarComponent
                     mode="single"
                     selected={checkIn}
@@ -154,10 +154,11 @@ export function SearchBar({ onSearch, className = '' }: SearchBarProps) {
                       setCheckIn(date);
                     }}
                     disabled={(date) => date < new Date()}
+                    className="rounded-md border dark:border-gray-700"
                   />
                 </div>
-                <div>
-                  <p className="text-sm font-medium mb-2">Check-out</p>
+                <div className="flex-1">
+                  <p className="text-sm font-medium mb-2 text-center sm:text-left">Check-out</p>
                   <CalendarComponent
                     mode="single"
                     selected={checkOut}
@@ -169,6 +170,7 @@ export function SearchBar({ onSearch, className = '' }: SearchBarProps) {
                       }
                     }}
                     disabled={(date) => date < (checkIn || new Date())}
+                    className="rounded-md border dark:border-gray-700"
                   />
                 </div>
               </div>

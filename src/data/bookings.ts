@@ -54,7 +54,7 @@ export const userBookings: Booking[] = [
     id: 'b002',
     propertyId: '2',
     propertyName: 'Seaside Villa Resort',
-    propertyImage: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?auto=format&fit=crop&w=800&q=80',
+    propertyImage: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80',
     propertyType: 'villa',
     location: 'Calangute, Goa',
     checkIn: '2026-03-10',
@@ -79,8 +79,7 @@ export const userBookings: Booking[] = [
     id: 'b003',
     propertyId: '3',
     propertyName: 'Mountain View Resort',
-    propertyImage: 'https://images.unsplash.com/photo-1571770095004-6b61b1cf3088?auto=format&fit=crop&w=800&q=80',
-    propertyType: 'resort',
+    propertyImage: "https://imgs.search.brave.com/uevmbf7AnSbH9luwNdCct7poFuYJrbL5SuLhLBL1Vb8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuY250cmF2ZWxs/ZXIuaW4vcGhvdG9z/LzYzYTUzNzU2NWMz/MDhkMmY5NmUxNjIw/My9tYXN0ZXIvd18x/MDI0LGNfbGltaXQv/S2h5YmVyLmpwZw",
     location: 'Old Manali, Manali',
     checkIn: '2025-12-20',
     checkOut: '2025-12-25',
@@ -98,7 +97,8 @@ export const userBookings: Booking[] = [
     guestPhone: '+91 98765 43210',
     bookingReference: 'BK003MVR2025',
     cancellationPolicy: 'Free cancellation up to 24 hours before check-in',
-    amenities: ['Free Wi-Fi', 'Breakfast', 'Mountain View', 'Spa']
+    amenities: ['Free Wi-Fi', 'Breakfast', 'Mountain View', 'Spa'],
+    propertyType: "hotel"
   },
   {
     id: 'b004',
